@@ -105,13 +105,17 @@
 }
 
 /* Main: productos */
-.main {
+.product-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;      /* que no se rompa en varias líneas */
     gap: 20px;
+    overflow-x: auto;       /* habilita scroll horizontal si no caben */
+    padding-bottom: 10px;
 }
 
+/* Product card: estilo uniforme */
 .product-card {
+    flex: 0 0 auto;         /* evita que se estiren las tarjetas */
     width: 180px;
     text-align: center;
     text-decoration: none;
@@ -119,18 +123,34 @@
     border-radius: 10px;
     padding: 10px;
     background-color: #FFE5B4;
-    transition: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover de tarjetas */
 .product-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Imagen de producto */
 .product-card img {
     width: 100%;
     height: 120px;
     object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Texto del producto */
+.product-card h2 {
+    font-size: 1.1rem;
+    margin: 10px 0 5px 0;
+    color: #4B2E2E;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #4B2E2E;
+    margin-bottom: 5px;
 }
 
 /* Footer */
