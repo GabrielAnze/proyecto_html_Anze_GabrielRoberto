@@ -21,6 +21,11 @@ gap: 10px;
     justify-content: space-between;
     align-items: center;
 }
+.header-left img { 
+    width: 80px;
+    height: auto;
+
+}
 
 .nav{
     grid-area: nav;
@@ -54,6 +59,12 @@ gap: 10px;
     margin: 10px 15px 10px;
     border: 1px gray solid;
     border-radius: 10px;
+}
+
+.product-card img{
+    width: 50%;
+    height: 100px;
+    object-fit: cover;
 }
 
 .footer{
