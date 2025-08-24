@@ -6,18 +6,18 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* Layout principal con grid */
+/* Layout principal */
 .layout {
     display: grid;
     grid-template-areas: 
-        "header header"
-        "nav main"
-        "footer footer";
-    grid-template-rows: 80px auto 120px;
-    grid-template-columns: 200px 1fr;
-    gap: 10px;
+        "header"
+        "nav"
+        "content"
+        "footer";
+    grid-template-rows: 80px 50px 1fr 120px;
     min-height: 100vh;
-    background-color: #F5E6D3; /* marrón claro de fondo */
+    gap: 10px;
+    background-color: #F5E6D3; /* marrón claro */
 }
 
 /* Header */
@@ -27,7 +27,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: #E29D6E; /* naranja vintage */
+    background-color: #E29D6E;
     border-bottom: 2px solid #D99058;
 }
 
@@ -43,7 +43,7 @@
 /* Nav horizontal */
 .nav {
     grid-area: nav;
-    background-color: #D99058; /* naranja más claro */
+    background-color: #D99058;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +57,7 @@
 
 .nav ul li a {
     text-decoration: none;
-    color: #4B2E2E; /* marrón oscuro */
+    color: #4B2E2E;
     font-weight: bold;
     padding: 5px 10px;
     transition: 0.3s;
@@ -68,21 +68,20 @@
     border-radius: 5px;
 }
 
-/* Contenedor principal: sidebar + main */
-.main {
-    grid-area: main;
-    display: flex;
+/* Content: sidebar + main */
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 180px 1fr;
     gap: 20px;
     padding: 20px;
 }
 
-/* Sidebar */
+/* Sidebar vertical de categorías */
 .sidebar {
-    width: 180px;
-    background-color: #F2C08C; /* tono claro */
+    background-color: #F2C08C;
     padding: 15px;
     border-radius: 10px;
-    height: fit-content;
 }
 
 .sidebar h3 {
@@ -105,15 +104,13 @@
     font-weight: bold;
 }
 
-/* Product container */
-.product-container {
+/* Main: productos */
+.main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start;
 }
 
-/* Product card */
 .product-card {
     width: 180px;
     text-align: center;
@@ -121,7 +118,7 @@
     border: 1px solid #C19A6B;
     border-radius: 10px;
     padding: 10px;
-    background-color: #FFE5B4; /* color vintage claro */
+    background-color: #FFE5B4;
     transition: 0.3s;
 }
 
